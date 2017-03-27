@@ -11,23 +11,35 @@ const renderPlayers = (playersList) => {
   });
 };
 
-Meteor.startup( () => {
+handleSubmit = (e) => {
+  e.preventDefault();
+  let name = e.target.playerName.value;
+  if (name) {
+    e.target.playerName.value = '';
+    Players.insert({
+      name,
+      score: 0
+    });
+  } else {
+    e.target.playerName.focus();
+  }
+};
 
+Meteor.startup( () => {
   Tracker.autorun( () => {
     var players = Players.find().fetch();
     renderPlayers(players);
-
     let title = 'Score Keep';
     let jsx = (
       <div>
         <h1>{title}</h1>
         {renderPlayers(players)}
+        <form onSubmit={handleSubmit}>
+          <input type="text" name="playerName" placeholder="Player name" />
+          <button>Add Player</button>
+        </form>
       </div>
     );
     ReactDOM.render(jsx, document.getElementById('app'));
-  });
-  Players.insert({
-    name: 'Roy',
-    score: 11
   });
 });
