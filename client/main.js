@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
+import { Tracker } from 'meteor/tracker';
+
+import { Players } from './../imports/api/players';
+
+Tracker.autorun( () => {
+  console.log('Players in MiniMongo: ', Players.find().fetch());
+});
 
 const players = [{
   _id: '1',
