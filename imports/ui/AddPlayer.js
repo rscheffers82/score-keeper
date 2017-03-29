@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Players} from './../api/players';
 
 export default class AddPlayer extends Component {
   constructor(props){
@@ -11,7 +12,7 @@ export default class AddPlayer extends Component {
     let name = e.target.playerName.value;
     if (name) {
       e.target.playerName.value = '';
-      this.props.handleSubmit(name);
+      Players.insert({ name, score: 0 });
     } else {
       e.target.playerName.focus();
     }
@@ -25,8 +26,4 @@ export default class AddPlayer extends Component {
       </form>
     );
   }
-}
-
-AddPlayer.propTypes = {
-  handleSubmit: React.PropTypes.func
 };
