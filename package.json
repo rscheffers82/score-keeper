@@ -24,5 +24,8 @@
     "plugins": [
       "transform-class-properties"
     ]
+  },
+  "engines": {
+    "node": "4.6.1"
   }
 }
