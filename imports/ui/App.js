@@ -10,10 +10,10 @@ export default class App extends Component {
     const { title, players } = this.props;
     return (
       <div>
-        <div>
           <TitleBar title={title} />
-          <PlayerList players={players} />
-          <AddPlayer />
+          <div className="wrapper">
+            <PlayerList players={players} />
+            <AddPlayer />
         </div>
       </div>
     );

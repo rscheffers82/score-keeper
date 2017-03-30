@@ -4,9 +4,11 @@ export default class TitleBar extends Component {
   render() {
     const { title, subTitle } = this.props;
     return (
-      <div>
-        <h1>{title}</h1>
-        { subTitle ? <h3>{subTitle}</h3> : '' }
+      <div className="title-bar">
+        <div className="wrapper">
+          <h1>{title}</h1>
+          { subTitle ? <h3>{subTitle}</h3> : '' }
+        </div>
       </div>
     );
   }
