@@ -6,7 +6,7 @@ export default class PlayerList extends Component {
     const {players} = this.props;
     if (players.length === 0 ) return (
       <div className="item">
-        <p>Add a player to get started</p>
+        <p className="item__message item__message__empty">Add a player to get started</p>
       </div>
     );
     else return players.map( (player) => <Player key={player._id} player={player}/> );

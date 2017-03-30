@@ -12,13 +12,13 @@ export default class Player extends Component {
         <p>
           {player.name} has {player.score} point(s)
         </p>
-        <button onClick={() => {
+        <button className="button button__round" onClick={() => {
           Players.update(player._id, { $inc: {score: 1} });
         }}>+</button>
-        <button onClick={() => {
+        <button className="button button__round" onClick={() => {
           Players.update(player._id, { $inc: {score: -1} });
         }}>-</button>
-        <button onClick={()=> Players.remove(player._id) }>x</button>
+        <button className="button button__round" onClick={()=> Players.remove(player._id) }>x</button>
       </div>
     );
   }
