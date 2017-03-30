@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 
 export default class TitleBar extends Component {
   render() {
-    const { title, subTitle } = this.props;
+    const { title, subtitle } = this.props;
     return (
       <div className="title-bar">
         <div className="wrapper">
           <h1>{title}</h1>
-          { subTitle ? <h3>{subTitle}</h3> : '' }
+          { subtitle ? <h3 className="title-bar__sub-title">{subtitle}</h3> : '' }
         </div>
       </div>
     );

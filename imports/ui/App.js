@@ -7,10 +7,10 @@ import PlayerList from './PlayerList';
 export default class App extends Component {
 
   render() {
-    const { title, players } = this.props;
+    const { title, players, subtitle } = this.props;
     return (
       <div>
-          <TitleBar title={title} />
+          <TitleBar title={title} subtitle={subtitle}/>
           <div className="wrapper">
             <PlayerList players={players} />
             <AddPlayer />
@@ -20,7 +20,9 @@ export default class App extends Component {
   }
 };
 
+
 App.propTypes = {
   title: React.PropTypes.string.isRequired,
+  subtitle: React.PropTypes.string,
   players: React.PropTypes.array.isRequired
 };

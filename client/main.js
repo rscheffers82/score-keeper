@@ -12,6 +12,7 @@ Meteor.startup( () => {
       sort: { score: -1}
     }).fetch();
     let title = 'Score Keep';
-    ReactDOM.render(<App title={title} players={players}/>, document.getElementById('app'));
+    let subtitle = 'Made by Roy Scheffers';
+    ReactDOM.render(<App title={title} subtitle={subtitle} players={players}/>, document.getElementById('app'));
   });
 });
