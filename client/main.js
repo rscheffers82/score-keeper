@@ -12,6 +12,6 @@ Meteor.startup( () => {
     let positionedPlayers = calculatePlayerPositions(players);
     let title = 'Score Keep';
     let subtitle = 'Made by Roy Scheffers';
-    ReactDOM.render(<App title={title} subtitle={subtitle} players={positionedPlayers}/>, document.getElementById('app'));
+    ReactDOM.render(<App title={title} players={positionedPlayers}/>, document.getElementById('app'));
   });
 });
