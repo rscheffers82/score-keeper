@@ -21,8 +21,8 @@ export default class AddPlayer extends Component {
   render() {
     return(
       <div className="item">
-        <form onSubmit={this.onSubmit}>
-          <input type="text" name="playerName" placeholder="Player name" />
+        <form className="form" onSubmit={this.onSubmit}>
+          <input className="form__input" type="text" name="playerName" placeholder="Player name" />
           <button className="button">Add Player</button>
         </form>
       </div>
